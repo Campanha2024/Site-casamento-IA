@@ -5,7 +5,6 @@ import { MapPin } from 'lucide-react';
 const Location: React.FC = () => {
   return (
     <section id="location" className="py-24 relative">
-      {/* Fundo branco semi-transparente para destacar sobre a foto de fundo do body */}
       <div className="absolute inset-0 bg-white/90 backdrop-blur-sm -z-10"></div>
       
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
@@ -35,7 +34,6 @@ const Location: React.FC = () => {
         </div>
 
         <div className="w-full md:w-1/2 h-96 relative shadow-xl rounded-sm overflow-hidden border-4 border-white">
-          {/* Placeholder de Mapa ou Foto do Local */}
           <img 
             src="https://i.postimg.cc/0N67KTCt/1-13-246079-1553699446.jpg" 
             alt="Local do Casamento" 

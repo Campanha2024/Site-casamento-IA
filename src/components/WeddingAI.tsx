@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { sendMessageToGemini } from '../services/geminiService';
 import { ChatMessage } from '../types';
-import { Sparkles, Send, X, MessageCircle } from 'lucide-react';
+import { Sparkles, Send, X } from 'lucide-react';
 
 const WeddingAI: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +44,6 @@ const WeddingAI: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Prepare history for context
       const history = messages.map(m => ({ role: m.role, text: m.text }));
       const responseText = await sendMessageToGemini(userText, history);
 
@@ -71,7 +70,6 @@ const WeddingAI: React.FC = () => {
 
   return (
     <>
-      {/* Floating Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 ${
@@ -82,13 +80,11 @@ const WeddingAI: React.FC = () => {
         {isOpen ? <X className="w-6 h-6 text-white" /> : <Sparkles className="w-6 h-6" />}
       </button>
 
-      {/* Chat Window */}
       <div className={`fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-lg shadow-2xl border border-stone-100 z-40 flex flex-col transition-all duration-300 origin-bottom-right ${
           isOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0 pointer-events-none'
         }`}
         style={{ maxHeight: '500px', height: '60vh' }}
       >
-        {/* Header */}
         <div className="bg-stone-900 p-4 rounded-t-lg flex items-center gap-3">
           <div className="bg-gold-400 p-1.5 rounded-full">
             <Sparkles className="w-4 h-4 text-white" />
@@ -99,7 +95,6 @@ const WeddingAI: React.FC = () => {
           </div>
         </div>
 
-        {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 bg-stone-50 space-y-4">
           {messages.map((msg) => (
             <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -124,7 +119,6 @@ const WeddingAI: React.FC = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input */}
         <div className="p-3 bg-white border-t border-stone-100 rounded-b-lg">
           <div className="flex items-center gap-2">
             <input 

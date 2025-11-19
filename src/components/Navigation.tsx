@@ -25,7 +25,6 @@ const Navigation: React.FC = () => {
 
     const element = document.querySelector(href);
     if (element) {
-      // Calcula a posição com um offset para o menu fixo
       const headerOffset = 100;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
@@ -56,7 +55,6 @@ const Navigation: React.FC = () => {
           <a href="#" onClick={(e) => handleNavClick(e, '#')}>{WEDDING_DETAILS.couple.names}</a>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
           {NAVIGATION_LINKS.map((link) => (
             <a 
@@ -70,7 +68,6 @@ const Navigation: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
         <button 
           className="md:hidden z-50 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -82,7 +79,6 @@ const Navigation: React.FC = () => {
           )}
         </button>
 
-        {/* Mobile Overlay */}
         {isMobileMenuOpen && (
           <div className="absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-8 md:hidden animate-fade-in">
             {NAVIGATION_LINKS.map((link) => (

@@ -1,80 +1,103 @@
 import React from 'react';
 import { WEDDING_DETAILS } from '../constants';
 
+// --- CONFIGURAÇÃO DA FOTO DE FUNDO ---
+// Cole o link da sua imagem dentro das aspas abaixo
+const BACKGROUND_IMAGE_URL = "https://i.postimg.cc/m2tZ4T2h/happy-couple-love-embracing-near-river.png";
+
 const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex flex-col justify-between p-4 md:p-8 z-0">
+    <section className="relative h-screen w-full overflow-hidden flex flex-col justify-between p-4 md:p-8 z-0 bg-stone-900">
       
-      {/* Gradiente Sutil para garantir leitura sobre a foto de fundo do body */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none"></div>
+      {/* CAMADA 1: Imagem de Fundo */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url("${BACKGROUND_IMAGE_URL}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          // Filtros para garantir legibilidade do texto sobre a foto
+          filter: 'sepia(0.2) brightness(0.55) contrast(1.1)'
+        }}
+      />
+
+      {/* CAMADA 2: Gradiente Sutil */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10"></div>
       
-      {/* Moldura Editorial (Borda Dourada Fina) */}
-      <div className="absolute inset-4 md:inset-6 border border-gold-200/40 pointer-events-none z-10">
+      {/* CAMADA 3: Moldura Editorial */}
+      <div className="absolute inset-4 md:inset-6 border border-white/10 pointer-events-none z-20">
         {/* Cantoneiras Decorativas */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold-300"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold-300"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold-300"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold-300"></div>
+        <div className="absolute top-0 left-0 w-px h-12 bg-gold-200/60"></div>
+        <div className="absolute top-0 left-0 h-px w-12 bg-gold-200/60"></div>
+        
+        <div className="absolute top-0 right-0 w-px h-12 bg-gold-200/60"></div>
+        <div className="absolute top-0 right-0 h-px w-12 bg-gold-200/60"></div>
+        
+        <div className="absolute bottom-0 left-0 w-px h-12 bg-gold-200/60"></div>
+        <div className="absolute bottom-0 left-0 h-px w-12 bg-gold-200/60"></div>
+        
+        <div className="absolute bottom-0 right-0 w-px h-12 bg-gold-200/60"></div>
+        <div className="absolute bottom-0 right-0 h-px w-12 bg-gold-200/60"></div>
       </div>
 
-      {/* Conteúdo Superior - Data e Local (Estilo Cabeçalho de Revista) */}
-      <div className="relative z-20 flex justify-between items-start pt-4 md:pt-8 px-4 animate-fade-in">
+      {/* Conteúdo Superior - Data e Local */}
+      <div className="relative z-30 flex justify-between items-start pt-6 md:pt-10 px-2 md:px-6 animate-fade-in">
         <div className="flex flex-col items-start">
-          <span className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/90 mb-1">
-            São Paulo
+          <span className="font-sans text-[10px] md:text-xs tracking-[0.3em] uppercase text-white/80 mb-2">
+            Wedding Invitation
           </span>
-          <div className="h-[1px] w-12 bg-gold-400"></div>
         </div>
         
         <div className="flex flex-col items-end text-right">
-           <span className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/90 mb-1">
-            Save The Date
-          </span>
-          <span className="font-serif italic text-gold-200 text-lg">
+          <span className="font-serif italic text-gold-200 text-xl md:text-2xl">
             15 . 11 . 2025
           </span>
         </div>
       </div>
 
       {/* Conteúdo Central - Títulos Grandes e Dramáticos */}
-      <div className="relative z-20 flex-1 flex flex-col justify-center">
-        <div className="w-full max-w-7xl mx-auto px-2 md:px-12 relative">
+      <div className="relative z-30 flex-1 flex flex-col justify-center items-center">
+        <div className="w-full max-w-6xl mx-auto relative">
           
-          {/* Texto Superior (A Noiva) */}
-          <h1 className="font-serif text-7xl md:text-9xl lg:text-[10rem] text-gold-100 leading-none animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s' }}>
-            {WEDDING_DETAILS.couple.bride.split(' ')[0]}
-          </h1>
-
-          {/* O "&" Conector */}
-          <div className="flex justify-center md:justify-end md:-mt-8 lg:-mt-16 pr-0 md:pr-32 animate-fade-in-up opacity-0" style={{ animationDelay: '0.5s' }}>
-             <span className="font-serif italic text-6xl md:text-8xl text-gold-400 drop-shadow-lg">
-               &
-             </span>
+          {/* Ana - Alinhado levemente à esquerda */}
+          <div className="text-center md:text-left md:pl-12 lg:pl-24 relative z-10">
+            <h1 className="font-serif italic font-light text-[5.5rem] md:text-[9rem] lg:text-[11rem] text-gold-200 leading-[0.8] tracking-tighter animate-fade-in-up opacity-0 drop-shadow-2xl" style={{ animationDelay: '0.2s' }}>
+              {WEDDING_DETAILS.couple.bride.split(' ')[0]}
+            </h1>
           </div>
 
-          {/* Texto Inferior (O Noivo) - Alinhado à direita ou centro dependendo do mobile */}
-          <h1 className="font-serif text-7xl md:text-9xl lg:text-[10rem] text-white leading-none text-right md:-mt-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.8s' }}>
-            {WEDDING_DETAILS.couple.groom.split(' ')[0]}
-          </h1>
+          {/* Conector Decorativo Central */}
+          <div className="flex items-center justify-center gap-6 my-2 md:-my-8 relative z-20 animate-fade-in opacity-0" style={{ animationDelay: '0.5s' }}>
+             <div className="h-[1px] w-16 md:w-32 bg-gradient-to-r from-transparent via-gold-200/50 to-transparent"></div>
+             <span className="font-serif italic text-2xl md:text-4xl text-white/90 font-light">
+               &
+             </span>
+             <div className="h-[1px] w-16 md:w-32 bg-gradient-to-r from-transparent via-gold-200/50 to-transparent"></div>
+          </div>
+
+          {/* João - Alinhado levemente à direita */}
+          <div className="text-center md:text-right md:pr-12 lg:pr-24 relative z-10">
+            <h1 className="font-serif italic font-light text-[5.5rem] md:text-[9rem] lg:text-[11rem] text-white leading-[0.8] tracking-tighter animate-fade-in-up opacity-0 drop-shadow-2xl" style={{ animationDelay: '0.8s' }}>
+              {WEDDING_DETAILS.couple.groom.split(' ')[0]}
+            </h1>
+          </div>
           
           {/* Subtítulo Elegante */}
-          <div className="mt-8 md:mt-12 text-center md:text-left animate-fade-in-up opacity-0" style={{ animationDelay: '1.2s' }}>
-            <p className="font-sans text-white/80 tracking-[0.4em] text-xs md:text-sm uppercase inline-block border-b border-white/20 pb-2">
-              A Celebração da União
+          <div className="mt-12 md:mt-16 text-center animate-fade-in-up opacity-0" style={{ animationDelay: '1.2s' }}>
+            <p className="font-sans text-white/70 tracking-[0.3em] text-[10px] md:text-xs uppercase">
+              A Celebração da Nossa União
             </p>
           </div>
         </div>
       </div>
 
-      {/* Rodapé do Hero - Scroll e Local */}
-      <div className="relative z-20 flex flex-col items-center pb-8 animate-fade-in opacity-0" style={{ animationDelay: '1.5s' }}>
-        <p className="font-serif italic text-white/80 text-xl mb-4">
-          {WEDDING_DETAILS.location.name}
-        </p>
-        
-        <div className="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-          <span className="text-[10px] uppercase tracking-widest text-white">Deslize</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-gold-300 to-transparent"></div>
+      {/* Rodapé do Hero - Local */}
+      <div className="relative z-30 flex flex-col items-center pb-8 animate-fade-in opacity-0" style={{ animationDelay: '1.5s' }}>
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-[1px] h-8 bg-gold-300/50"></div>
+          <p className="font-sans text-white/90 text-xs md:text-sm tracking-[0.2em] uppercase">
+            {WEDDING_DETAILS.location.name}
+          </p>
         </div>
       </div>
 

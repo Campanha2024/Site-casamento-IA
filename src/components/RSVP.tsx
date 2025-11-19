@@ -7,7 +7,6 @@ const RSVP: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate API call
     setTimeout(() => {
       setStatus('success');
     }, 1500);
@@ -32,7 +31,6 @@ const RSVP: React.FC = () => {
 
   return (
     <section id="rsvp" className="py-24 bg-stone-900 text-stone-100 relative overflow-hidden">
-      {/* Decorative Circle */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
       <div className="max-w-3xl mx-auto px-6 relative z-10">

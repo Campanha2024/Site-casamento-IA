@@ -13,10 +13,8 @@ const Timeline: React.FC = () => {
           {TIMELINE.map((event, index) => (
             <div key={index} className="relative flex flex-col md:flex-row items-center w-full group">
               
-              {/* Dot on the line */}
               <div className="absolute left-[-5px] md:left-1/2 md:-translate-x-[5px] w-[10px] h-[10px] rounded-full bg-gold-400 border-2 border-white z-10 group-hover:scale-125 transition-transform duration-300"></div>
 
-              {/* Content Wrapper */}
               <div className={`w-full md:w-1/2 pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left md:ml-auto'}`}>
                 <div className="inline-flex items-center gap-2 text-gold-500 font-semibold mb-1 justify-start md:justify-inherit">
                   <Clock className="w-4 h-4" />
