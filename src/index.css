@@ -1,3 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 
+  Como estamos usando o Tailwind via CDN no index.html para simplificar a configuração,
+  não precisamos das diretivas @tailwind aqui.
+  
+  Você pode adicionar CSS global personalizado aqui se necessário.
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}

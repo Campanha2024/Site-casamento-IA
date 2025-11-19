@@ -5,15 +5,19 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden flex flex-col justify-between p-4 md:p-8 z-0">
       
+      {/* Gradiente Sutil para garantir leitura sobre a foto de fundo do body */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none"></div>
       
+      {/* Moldura Editorial (Borda Dourada Fina) */}
       <div className="absolute inset-4 md:inset-6 border border-gold-200/40 pointer-events-none z-10">
+        {/* Cantoneiras Decorativas */}
         <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold-300"></div>
         <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold-300"></div>
         <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold-300"></div>
         <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold-300"></div>
       </div>
 
+      {/* Conteúdo Superior - Data e Local (Estilo Cabeçalho de Revista) */}
       <div className="relative z-20 flex justify-between items-start pt-4 md:pt-8 px-4 animate-fade-in">
         <div className="flex flex-col items-start">
           <span className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/90 mb-1">
@@ -32,23 +36,28 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
+      {/* Conteúdo Central - Títulos Grandes e Dramáticos */}
       <div className="relative z-20 flex-1 flex flex-col justify-center">
         <div className="w-full max-w-7xl mx-auto px-2 md:px-12 relative">
           
+          {/* Texto Superior (A Noiva) */}
           <h1 className="font-serif text-7xl md:text-9xl lg:text-[10rem] text-gold-100 leading-none animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s' }}>
             {WEDDING_DETAILS.couple.bride.split(' ')[0]}
           </h1>
 
+          {/* O "&" Conector */}
           <div className="flex justify-center md:justify-end md:-mt-8 lg:-mt-16 pr-0 md:pr-32 animate-fade-in-up opacity-0" style={{ animationDelay: '0.5s' }}>
              <span className="font-serif italic text-6xl md:text-8xl text-gold-400 drop-shadow-lg">
                &
              </span>
           </div>
 
+          {/* Texto Inferior (O Noivo) - Alinhado à direita ou centro dependendo do mobile */}
           <h1 className="font-serif text-7xl md:text-9xl lg:text-[10rem] text-white leading-none text-right md:-mt-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.8s' }}>
             {WEDDING_DETAILS.couple.groom.split(' ')[0]}
           </h1>
           
+          {/* Subtítulo Elegante */}
           <div className="mt-8 md:mt-12 text-center md:text-left animate-fade-in-up opacity-0" style={{ animationDelay: '1.2s' }}>
             <p className="font-sans text-white/80 tracking-[0.4em] text-xs md:text-sm uppercase inline-block border-b border-white/20 pb-2">
               A Celebração da União
@@ -57,6 +66,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
+      {/* Rodapé do Hero - Scroll e Local */}
       <div className="relative z-20 flex flex-col items-center pb-8 animate-fade-in opacity-0" style={{ animationDelay: '1.5s' }}>
         <p className="font-serif italic text-white/80 text-xl mb-4">
           {WEDDING_DETAILS.location.name}

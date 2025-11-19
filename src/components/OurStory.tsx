@@ -6,6 +6,7 @@ const OurStory: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24">
           
+          {/* Image Grid */}
           <div className="w-full md:w-1/2 relative">
             <div className="grid grid-cols-2 gap-4">
               <img 
@@ -19,9 +20,11 @@ const OurStory: React.FC = () => {
                 className="w-full h-64 md:h-80 object-cover rounded-sm shadow-lg -translate-y-8"
               />
             </div>
+            {/* Decorative Square */}
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[90%] border border-gold-300/50"></div>
           </div>
 
+          {/* Text Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="font-sans text-gold-400 tracking-widest text-sm uppercase mb-4">Nossa Jornada</h2>
             <h3 className="font-serif text-4xl md:text-5xl text-stone-900 mb-8">Como Tudo Começou</h3>

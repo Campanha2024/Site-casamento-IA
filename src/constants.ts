@@ -47,16 +47,19 @@ export const REGISTRY_ITEMS = [
   { 
     title: "Lua de Mel nas Maldivas", 
     price: "Cota de R$ 500", 
+    // TROQUE A URL ABAIXO PELA FOTO DO SEU PRESENTE
     image: "https://i.postimg.cc/kGvrytfF/0c4a3319-f0f8-45e2-9852-91a247d5eb79.jpg" 
   },
   { 
     title: "Jantar Romântico em Paris", 
     price: "Cota de R$ 300", 
+    // TROQUE A URL ABAIXO PELA FOTO DO SEU PRESENTE
     image: "https://i.postimg.cc/v8rdypbc/d19720b8-4179-4dbc-a629-f4216d5fb0ea.jpg" 
   },
   { 
     title: "Renovação da Casa", 
     price: "Cota de R$ 200", 
+    // TROQUE A URL ABAIXO PELA FOTO DO SEU PRESENTE
     image: "https://i.postimg.cc/05YqvLPj/359c7351-8a1f-4d79-b356-6efeb5ce7112.jpg" 
   },
 ];

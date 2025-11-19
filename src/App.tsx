@@ -18,6 +18,7 @@ const App: React.FC = () => {
       <Navigation />
       <Hero />
       
+      {/* Wrappers com bg-white/90 para o efeito de transparência elegante e permitir ver as linhas animadas levemente */}
       <div className="bg-white/90 backdrop-blur-sm">
         <OurStory />
       </div>
@@ -27,6 +28,7 @@ const App: React.FC = () => {
       </div>
 
       <div className="relative z-10">
+        {/* Parallax separator image */}
         <div 
           className="h-96 bg-fixed bg-cover bg-center"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop")' }}
